@@ -1,0 +1,21 @@
+/* Fotoğraf */
+.hero-image {
+  /* Hafif blur-edge efekti */
+  border-radius: 50%;
+}
+
+.hero-circle-inside {
+  border-radius: 20%;
+  height: 65vh;
+  opacity: 0.2;
+}
+.hero-image:hover {
+  transform: scale(1.05);
+}
+
+/* Küçük ekran için daha küçük */
+@media (max-width: 480px) {
+  .hero-circle {
+    width: 90vw;
+  }
+}

@@ -1,0 +1,659 @@
+/* Tam ekran overlay */
+.registerOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal kart */
+.registerModal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+
+  background: rgba(15, 23, 42, 0.96);
+  border-radius: 24px;
+  padding: 1.8rem 1.6rem 1.6rem;
+
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  color: #e5e7eb;
+}
+
+/* Kapatma butonu */
+.registerClose {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.2rem;
+  border-radius: 999px;
+  transition: 0.2s ease;
+}
+
+.registerClose:hover {
+  background: rgba(148, 163, 184, 0.2);
+  color: #e5e7eb;
+}
+
+/* Başlık & alt başlık */
+.registerTitle {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
+.registerSubtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 1.4rem;
+}
+
+/* Form */
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+}
+
+.formGroup label {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+.groupLabel {
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9ca3af;
+}
+
+/* Input & textarea */
+.formGroup input,
+.formGroup textarea {
+  border-radius: 0.8rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.9rem;
+  outline: none;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #6b7280;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  border-color: #c55d8c;
+  box-shadow: 0 0 0 1px rgba(197, 93, 140, 0.6);
+}
+
+/* Cinsiyet inline radio */
+.inlineOptions {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.radioOption {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: #d1d5db;
+}
+
+.radioOption input {
+  accent-color: #c55d8c;
+}
+
+/* İlgi alanı / slot pill butonları */
+.pillOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pillOption {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.pillOption:hover {
+  border-color: #c55d8c;
+}
+
+.pillOption--active {
+  background: linear-gradient(135deg, #c55d8c, #447eb2);
+  border-color: transparent;
+  box-shadow: 0 0 14px rgba(197, 93, 140, 0.6);
+}
+
+/* Submit butonu */
+.registerSubmit {
+  margin-top: 0.4rem;
+  border-radius: 999px;
+  border: none;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #c55d8c, #447eb2);
+  color: white;
+
+  box-shadow: 0 0 20px rgba(197, 93, 140, 0.45);
+  transition: 0.25s ease;
+}
+
+.registerSubmit:hover:enabled {
+  transform: translateY(-2px);
+  box-shadow: 0 0 26px rgba(197, 93, 140, 0.65);
+}
+
+.registerSubmit:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+/* Alt bilgi */
+.registerInfo {
+  margin-top: 0.8rem;
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.7;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .registerModal {
+    margin: 0 1rem;
+    padding: 1.6rem 1.2rem 1.4rem;
+  }
+}
+
+/* ========================
+   STEPPER (1-2-3)
+======================== */
+
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.stepDot {
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+
+  font-weight: 700;
+  font-size: 0.9rem;
+
+  background: rgba(15, 23, 42, 0.9);
+  border: 1px solid rgba(148, 163, 184, 0.45);
+  color: rgba(229, 231, 235, 0.75);
+}
+
+.stepDot.active {
+  background: rgba(200, 240, 255, 0.22);
+  border-color: rgba(200, 240, 255, 0.55);
+  color: #e8eef5;
+  box-shadow: 0 0 18px rgba(180, 220, 255, 0.25);
+}
+
+.stepLine {
+  width: 54px;
+  height: 2px;
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 999px;
+}
+
+/* ========================
+   STEP 1 GRID
+======================== */
+
+.formGrid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+@media (max-width: 480px) {
+  .formGrid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ========================
+   WIZARD ACTIONS
+======================== */
+
+.wizardActions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  margin-top: 0.4rem;
+}
+
+.wizardBack,
+.wizardNext {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+}
+
+.wizardNext {
+  border: none;
+  background: linear-gradient(135deg, #c55d8c, #447eb2);
+  box-shadow: 0 0 18px rgba(197, 93, 140, 0.35);
+}
+
+.firstValid {
+  /* sağa yanaşsın isteriz*/
+  margin-left: auto;
+}
+
+.wizardNext:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* ========================
+   OTP UI
+======================== */
+
+.otpRow {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 0.6rem;
+  margin-top: 0.6rem;
+}
+
+.otpSend,
+.otpVerify {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.5rem 0.9rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+}
+
+.otpVerify:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.otpInput {
+  border-radius: 0.8rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.95rem;
+  outline: none;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+  letter-spacing: 0.18em;
+  text-align: center;
+}
+
+.otpStatus {
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
+  opacity: 0.9;
+}
+
+.otpStatus.ok {
+  color: rgba(180, 220, 255, 0.95);
+}
+
+.otpStatus.warn {
+  color: rgba(245, 230, 191, 0.9);
+}
+
+.hintText {
+  margin-top: 0.35rem;
+  font-size: 0.78rem;
+  opacity: 0.75;
+}
+
+/* ========================
+   STEP 3: HOBBIES (free input)
+======================== */
+
+.hobbyRow {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.hobbyInput {
+  border-radius: 0.8rem;
+  border: 1px solid rgba(55, 65, 81, 0.9);
+  padding: 0.55rem 0.75rem;
+  font-size: 0.9rem;
+  outline: none;
+  background: rgba(15, 23, 42, 0.9);
+  color: #e5e7eb;
+}
+
+.hobbyInput:focus {
+  border-color: #c55d8c;
+  box-shadow: 0 0 0 1px rgba(197, 93, 140, 0.6);
+}
+
+.hobbyAdd {
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  padding: 0.55rem 0.95rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: rgba(15, 23, 42, 0.7);
+  color: #e5e7eb;
+}
+
+.hobbyChips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.6rem;
+}
+
+.hobbyChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.6);
+  background: rgba(15, 23, 42, 0.8);
+  color: #e5e7eb;
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.hobbyChip:hover {
+  border-color: #c55d8c;
+}
+
+.chipX {
+  opacity: 0.75;
+}
+
+/* ========================
+   STEP 3: SLOT TABLE (23-26 Dec)
+======================== */
+
+.slotTable {
+  margin-top: 0.7rem;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 16px;
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.slotHeader {
+  display: grid;
+  grid-template-columns: 80px repeat(4, 1fr);
+  background: rgba(15, 23, 42, 0.75);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+}
+
+.slotCorner,
+.slotDay {
+  padding: 0.65rem 0.6rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  text-align: center;
+}
+
+.slotDay {
+  border-left: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.slotBody {
+  max-height: 320px; /* çok uzunsa scroll */
+  overflow: auto;
+}
+
+.slotRow {
+  display: grid;
+  grid-template-columns: 80px repeat(4, 1fr);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.slotTime {
+  padding: 0.6rem 0.6rem;
+  font-size: 0.82rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.slotCell {
+  height: 42px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  border-left: 1px solid rgba(148, 163, 184, 0.08);
+}
+
+.slotCell:hover {
+  background: rgba(200, 240, 255, 0.08);
+}
+
+.slotCell.active {
+  background: rgba(200, 240, 255, 0.22);
+  box-shadow: inset 0 0 0 1px rgba(200, 240, 255, 0.35);
+}
+
+/* Mobile’da tablo çok geniş olmasın -> yatay scroll */
+@media (max-width: 520px) {
+  .slotTable {
+    overflow-x: auto;
+  }
+
+  .slotHeader,
+  .slotRow {
+    width: 560px; /* yatay scroll */
+  }
+}
+
+.tipBox {
+  margin-top: 0.7rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 14px;
+
+  border: 1px solid rgba(245, 230, 191, 0.35);
+  background: rgba(245, 230, 191, 0.08);
+
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: rgba(245, 230, 191, 0.95);
+
+  box-shadow: 0 0 18px rgba(245, 230, 191, 0.08);
+}
+
+/* ✅ RESPONSIVE PATCH: overlay ve modal taşmalarını çöz */
+.registerOverlay {
+  padding: 1rem; /* mobilde kenarlardan nefes */
+  align-items: flex-start; /* çok uzun olunca yukarıdan başlasın */
+  overflow-y: auto; /* overlay scroll */
+}
+
+.registerModal {
+  width: min(520px, 100%); /* mobilde tam genişliğe yaklaş */
+  max-height: calc(100vh - 2rem);
+  overflow: auto; /* modal içi scroll */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ✅ küçük ekranlarda padding biraz azalsın */
+@media (max-width: 480px) {
+  .registerModal {
+    padding: 1.25rem 1rem 1rem;
+    border-radius: 18px;
+  }
+
+  .registerTitle {
+    font-size: 1.15rem;
+  }
+
+  .registerSubtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ✅ Stepper mobilde daha küçük */
+@media (max-width: 480px) {
+  .stepDot {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+  .stepLine {
+    width: 38px;
+  }
+}
+
+/* ✅ Step 1 grid mobilde daha erken tek kolona düşsün */
+@media (max-width: 560px) {
+  .formGrid2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✅ OTP mobilde satır kırılabilsin */
+@media (max-width: 520px) {
+  .otpRow {
+    grid-template-columns: 1fr; /* tek kolon */
+  }
+
+  .otpSend,
+  .otpVerify {
+    width: 100%;
+  }
+
+  .otpInput {
+    width: 100%;
+  }
+}
+
+/* ✅ Hobby input mobilde tek kolon */
+@media (max-width: 520px) {
+  .hobbyRow {
+    grid-template-columns: 1fr;
+  }
+  .hobbyAdd {
+    width: 100%;
+  }
+}
+
+/* ✅ Slot table responsive: yatay scroll + kompakt hücreler */
+.slotTable {
+  width: 100%;
+}
+
+@media (max-width: 520px) {
+  .slotTable {
+    overflow-x: auto;
+  }
+
+  /* tabloyu “min-width” yapıp yatay kaydır */
+  .slotHeader,
+  .slotRow {
+    min-width: 520px;
+  }
+
+  .slotHeader {
+    grid-template-columns: 64px repeat(4, 1fr);
+  }
+  .slotRow {
+    grid-template-columns: 64px repeat(4, 1fr);
+  }
+
+  .slotTime {
+    font-size: 0.78rem;
+    padding: 0.5rem 0.35rem;
+  }
+
+  .slotCell {
+    height: 34px;
+  }
+
+  .slotCorner,
+  .slotDay {
+    font-size: 0.7rem;
+    padding: 0.55rem 0.35rem;
+  }
+
+  .slotBody {
+    max-height: 260px; /* mobilde biraz kısalt */
+  }
+}
+
+/* ✅ Wizard actions mobilde alt alta gelebilsin */
+@media (max-width: 420px) {
+  .wizardActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .wizardBack,
+  .wizardNext,
+  .registerSubmit {
+    width: 100%;
+  }
+}
+
+/* ✅ Tip box mobil font küçülsün */
+@media (max-width: 480px) {
+  .tipBox {
+    font-size: 0.78rem;
+    padding: 0.65rem 0.75rem;
+  }
+}

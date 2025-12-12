@@ -180,7 +180,6 @@ body.theme-dark .fontTitleOZU {
 ======================== */
 
 .theme-toggle {
-  position: fixed;
   top: 1.5rem;
   right: 1.5rem;
   z-index: 10;
@@ -346,4 +345,41 @@ body.theme-light .theme-toggle {
     transparent
   );
   opacity: 0.8;
+}
+
+.buttonGroups {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  z-index: 12;
+  flex-direction: row;
+}
+.registerButton {
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #c55d8c, #447eb2);
+  color: white;
+  border: none;
+
+  box-shadow: 0 0 18px rgba(196, 96, 150, 0.35);
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s ease;
+}
+
+.registerButton:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 0 26px rgba(196, 96, 150, 0.55);
+}
+
+.registerButton:active {
+  transform: scale(0.97);
+  opacity: 0.85;
 }
