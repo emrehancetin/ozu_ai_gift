@@ -1,7 +1,14 @@
-#root {
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
+  text-align: center;
+} */
+#root {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
@@ -42,13 +49,13 @@ body {
 }
 
 /* ---- center layout ---- */
-.app-root {
+/* .app-root {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-}
+} */
 
 /* ---- header ---- */
 .fontHeaderOZU {
@@ -133,6 +140,8 @@ body.theme-dark {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 1.5rem;
+  width: 100%;
   padding: 1.5rem;
 
   /* snow altında kalmasın */
@@ -355,7 +364,6 @@ body.theme-light .theme-toggle {
   flex-direction: column;
   gap: 0.8rem;
   z-index: 12;
-  flex-direction: row;
 }
 .registerButton {
   padding: 0.55rem 1.2rem;
@@ -382,4 +390,34 @@ body.theme-light .theme-toggle {
 .registerButton:active {
   transform: scale(0.97);
   opacity: 0.85;
+}
+
+@media (max-width: 520px) {
+  .buttonGroups {
+    left: 1rem;
+    right: 1rem;
+    top: 1rem;
+
+    justify-content: space-between;
+    gap: 0.6rem;
+  }
+
+  .theme-toggle,
+  .registerButton {
+    width: 100%;
+    max-width: none;
+    padding: 0.55rem 0.9rem;
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 480px) {
+  .time-box {
+    min-width: 52px;
+    min-height: 64px;
+  }
+
+  .timer-colon {
+    font-size: 1.4rem;
+    margin-bottom: 0.4rem;
+  }
 }
