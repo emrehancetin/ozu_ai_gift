@@ -421,3 +421,207 @@ body.theme-light .theme-toggle {
     margin-bottom: 0.4rem;
   }
 }
+
+.loginButton {
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  /* 🔥 Soft gradient – register ile akraba */
+  background: linear-gradient(
+    135deg,
+    rgba(68, 126, 178, 0.85),
+    rgba(197, 93, 140, 0.75)
+  );
+
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 0 14px rgba(68, 126, 178, 0.35),
+    0 0 22px rgba(197, 93, 140, 0.25);
+
+  backdrop-filter: blur(10px);
+  transition: all 0.25s ease;
+}
+
+.loginButton:hover {
+  transform: translateY(-3px) scale(1.03);
+
+  box-shadow: 0 0 22px rgba(68, 126, 178, 0.55),
+    0 0 34px rgba(197, 93, 140, 0.45);
+
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.loginButton:active {
+  transform: scale(0.97);
+  opacity: 0.9;
+}
+
+/* Hamburger (default: hidden on desktop) */
+.menuButton {
+  display: none !important;
+
+  width: 48px;
+  height: 44px;
+  border-radius: 999px;
+
+  font-size: 1.1rem;
+  font-weight: 800;
+  cursor: pointer;
+
+  /* 🎨 Register/Login ile akraba gradient */
+  background: linear-gradient(
+    135deg,
+    rgba(197, 93, 140, 0.85),
+    rgba(68, 126, 178, 0.85)
+  );
+
+  color: #ffffff;
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  box-shadow: 0 0 14px rgba(197, 93, 140, 0.35),
+    0 0 22px rgba(68, 126, 178, 0.25);
+
+  backdrop-filter: blur(10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all 0.25s ease;
+}
+
+.menuButton:hover {
+  transform: translateY(-3px) scale(1.05);
+
+  box-shadow: 0 0 22px rgba(197, 93, 140, 0.55),
+    0 0 34px rgba(68, 126, 178, 0.45);
+}
+
+.menuButton:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+/* ✅ Mobile behavior */
+@media (max-width: 520px) {
+  .registerButton,
+  .loginButton {
+    display: none; /* mobilde iki butonu kapat */
+  }
+
+  .menuButton {
+    display: inline-flex !important; /* mobilde hamburger aç */
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    width: 48px;
+    height: 44px;
+    padding: 0;
+  }
+}
+
+.mobileMenuOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(3px);
+}
+
+.mobileMenuDrawer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  /* width: min(320px, 86vw); */
+  width: 50vw;
+
+  background: rgba(15, 23, 42, 0.96);
+  border-left: 1px solid rgba(148, 163, 184, 0.25);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.55);
+
+  padding: 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  transform: translateX(0);
+}
+
+.mobileMenuClose {
+  border: none;
+  background: transparent;
+  color: #e5e7eb;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 0.25rem 0.45rem;
+  border-radius: 999px;
+}
+
+.mobileMenuTitle {
+  text-align: center;
+  font-size: 1.85rem;
+  letter-spacing: 0.14em;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin-bottom: 0.2rem;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.mobileMenuItem {
+  width: 100%;
+  border-radius: 14px;
+  padding: 0.85rem 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: center;
+
+  background: rgba(148, 163, 184, 0.14);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  color: #e5ecff;
+
+  transition: 0.2s ease;
+}
+
+.mobileMenuItem:hover {
+  transform: translateY(-2px);
+  border-color: rgba(197, 93, 140, 0.55);
+}
+
+.mobileMenuItem.primary {
+  background: linear-gradient(135deg, #c55d8c, #447eb2);
+  border: none;
+  color: white;
+  box-shadow: 0 0 18px rgba(196, 96, 150, 0.28);
+}
+
+.mobileMenuItem.secondary {
+  background: linear-gradient(
+    135deg,
+    rgba(68, 126, 178, 0.85),
+    rgba(197, 93, 140, 0.75)
+  );
+  border: none;
+  color: white;
+  box-shadow: 0 0 18px rgba(68, 126, 178, 0.28),
+    0 0 18px rgba(197, 93, 140, 0.22);
+}
+
+.mobileMenuItem.secondary:hover {
+  box-shadow: 0 0 26px rgba(68, 126, 178, 0.45),
+    0 0 18px rgba(197, 93, 140, 0.18);
+  transform: translateY(-2px) scale(1.01);
+}
+
+/* Desktop'ta overlay/drawer asla görünmesin */
+@media (min-width: 521px) {
+  .mobileMenuOverlay {
+    display: none;
+  }
+}

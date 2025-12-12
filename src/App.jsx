@@ -1,43 +1,78 @@
-// src/App.jsx
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Home from "./components/Home.jsx";
 import Snow from "./components/Snow/Snow.jsx";
 import Register from "./components/Register/Register.jsx";
+import Login from "./components/Login/Login.jsx";
 
 function App() {
-  const [theme, setTheme] = useState("dark");
   const [showRegister, setShowRegister] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    document.body.classList.remove("theme-light", "theme-dark");
-    document.body.classList.add(`theme-${theme}`);
-  }, [theme]);
-
-  const toggleTheme = () => {
-    setTheme((prev) => (prev === "light" ? "dark" : "light"));
-  };
-
-  const openRegisterPage = () => {
-    setShowRegister(!showRegister);
-  };
+  const openRegisterPage = () => setShowRegister((p) => !p);
+  const openLoginPage = () => setShowLogin((p) => !p);
 
   return (
     <div className="app-root">
       <Snow />
 
       <div className="buttonGroups">
-        <button className="registerButton" onClick={() => openRegisterPage()}>
+        <button className="registerButton" onClick={openRegisterPage}>
           Register
         </button>
-        <button className="theme-toggle" onClick={toggleTheme}>
-          {theme === "light" ? "🌙 Gece Modu" : "☀ Gündüz Modu"}
+
+        <button className="loginButton" onClick={openLoginPage}>
+          Login
+        </button>
+        <button className="menuButton" onClick={() => setIsMenuOpen(true)}>
+          ☰
         </button>
       </div>
-      {/* Arka planlı ana kart */}
+
       <Home />
-      {/* {showRegister && <Register />} */}
+      {isMenuOpen && (
+        <div
+          className="mobileMenuOverlay"
+          onClick={(e) => {
+            if (e.target.classList.contains("mobileMenuOverlay"))
+              setIsMenuOpen(false);
+          }}
+        >
+          <div className="mobileMenuDrawer">
+            <button
+              className="mobileMenuClose"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              ✕
+            </button>
+
+            <button
+              className="mobileMenuItem primary"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setShowRegister(true);
+              }}
+            >
+              Register
+            </button>
+
+            <button
+              className="mobileMenuItem secondary"
+              onClick={() => {
+                setIsMenuOpen(false);
+                setShowLogin(true);
+              }}
+            >
+              Login
+            </button>
+            <div className="mobileMenuTitle">OzU AI</div>
+          </div>
+        </div>
+      )}
+
       {showRegister && <Register onClose={() => setShowRegister(false)} />}
+      {showLogin && <Login onClose={() => setShowLogin(false)} />}
     </div>
   );
 }

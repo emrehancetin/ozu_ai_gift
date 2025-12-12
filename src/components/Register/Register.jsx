@@ -532,8 +532,11 @@ function Register({ onClose }) {
     name: "",
     surname: "",
     email: "",
-    gender: "MALE",
     phone: "",
+    gender: "MALE",
+    password: "",
+    passwordConfirm: "",
+    kvkkAccepted: false,
   });
 
   // OTP
