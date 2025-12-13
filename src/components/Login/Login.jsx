@@ -29,6 +29,8 @@ function Login({ onClose }) {
       // Demo:
       await new Promise((r) => setTimeout(r, 500));
       alert("Giriş başarılı ✅ (demo)");
+      onLoginSuccess?.();
+
       onClose?.();
     } catch (err) {
       console.error(err);

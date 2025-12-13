@@ -195,28 +195,50 @@ function Step1Profile({ form, setForm, onNext }) {
             <h3 className="kvkkTitle">KVKK Aydınlatma Metni</h3>
             <div className="kvkkBody">
               <ol className="kvkkList">
+                🎄✨ Özyeğin Üniversitesi Yapay Zekâ Kulübü Yılbaşı Hediyeleşme
+                Etkinliği – Tatlı Ama Önemli Bilgiler ✨
                 <li>
-                  Toplanan veriler (ad, soyad, email, telefon, cinsiyet, ilgi
-                  alanları, müsaitlik) yalnızca etkinlik organizasyonu ve
-                  eşleştirme amacıyla işlenir.
+                  🎁 Yılbaşı ruhunu birlikte yaşamak için düzenlediğimiz
+                  hediyeleşme etkinliğimizde hem eğlenceyi hem de güveni ön
+                  planda tutuyoruz
+                  <br />
+                  🤍 Bu nedenle birkaç küçük ama önemli hatırlatmamız var:
                 </li>
                 <li>
-                  Veriler üçüncü kişilerle paylaşılmaz; yalnızca organizasyon
-                  ekibi tarafından erişilir.
+                  🔐 KVKK Bizim Kırmızı Çizgimizdir! Etkinlik süresince 6698
+                  sayılı Kişisel Verilerin Korunması Kanunu (KVKK)’na %100 uyum
+                  sağlanacaktır.
+                  <br /> Katılımcıların isim ve soyisimleri açık şekilde
+                  paylaşılmayacak, yalnızca S**** Y**** B***** şeklinde
+                  isim–soyisim baş harfleri görünecektir. <br /> Kişisel veriler
+                  yalnızca etkinlik amacıyla kullanılacak ve üçüncü kişilerle
+                  paylaşılmayacaktır.
                 </li>
                 <li>
-                  Veriler, etkinlik süreci tamamlandıktan sonra makul süre
-                  içinde silinir/anonimleştirilir.
+                  📱 Eşleşmeler Nasıl Olacak? Hediyeleşme eşleşmesi yapılan
+                  kişiyle: Telefon numarası, Hobiler, Müsait saat bilgileri
+                  paylaşılacaktır. <br />
+                  Bu bilgiler, hediye sürecini daha keyifli, kişisel ve sorunsuz
+                  hale getirmek amacıyla ve iki tarafın da iletişiminin
+                  sağlanması amacıyla güvenlice kullanılacaktır ✨
                 </li>
                 <li>
-                  KVKK kapsamında verilerinize ilişkin bilgi talep etme,
-                  düzeltme ve silme hakkına sahipsiniz.
+                  🎁 Hediyeleşme = Sorumluluk! <br /> Bu etkinlik karşılıklı bir
+                  hediyeleşmeye dayanmaktadır. Bu yüzden: Hediye almak ve
+                  getirmek etkinliğe katılımın zorunlu bir koşuludur. <br />{" "}
+                  Hediye getirilmemesi, eşleşilen kişinin hediyesiz kalmasına
+                  neden olacağından, katılımcılardan özenli ve dikkatli
+                  davranmaları özellikle rica edilir. <br />
+                  Etkinliğe katılan herkes, hediye getirme yükümlülüğünü kabul
+                  etmiş ve taahhüt etmiş sayılır 🎁🤝 Amacımız herkesin mutlu,
+                  güvende ve yılbaşı ruhuyla dolu ayrıldığı bir etkinlik
+                  yaratmak <br /> 🎄✨ Anlayışınız ve katkınız için şimdiden
+                  teşekkür ederiz!
                 </li>
-                <li>
+                {/* <li>
                   İletişim: (buraya kulüp maili / iletişim kanalı eklenecek)
-                </li>
+                </li> */}
               </ol>
-
               <div className="kvkkNote">
                 Devam ederek bu metni okuduğunuzu ve kabul ettiğinizi onaylamış
                 olursunuz.

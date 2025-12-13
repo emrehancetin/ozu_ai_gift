@@ -749,3 +749,19 @@ body.theme-light .theme-toggle {
     max-width: 420px;
   }
 }
+.goMyProfileButton {
+  padding: 0.55rem 1.2rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #c55d8c, #447eb2);
+  color: white;
+  border: none;
+
+  box-shadow: 0 0 18px rgba(196, 96, 150, 0.35);
+  backdrop-filter: blur(10px);
+
+  transition: 0.25s ease;
+}
