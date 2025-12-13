@@ -4,11 +4,13 @@ import Home from "./components/Home.jsx";
 import Snow from "./components/Snow/Snow.jsx";
 import Register from "./components/Register/Register.jsx";
 import Login from "./components/Login/Login.jsx";
+import HowItWorks from "./components/HowItWorks.jsx";
 
 function App() {
   const [showRegister, setShowRegister] = useState(false);
   const [showLogin, setShowLogin] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showHowItWorks, setShowHowItWorks] = useState(false);
 
   const openRegisterPage = () => setShowRegister((p) => !p);
   const openLoginPage = () => setShowLogin((p) => !p);
@@ -31,6 +33,13 @@ function App() {
       </div>
 
       <Home />
+      <button
+        className="howItWorksButton"
+        onClick={() => setShowHowItWorks(true)}
+      >
+        Nasıl Çalışır?
+      </button>
+
       {isMenuOpen && (
         <div
           className="mobileMenuOverlay"
@@ -73,6 +82,9 @@ function App() {
 
       {showRegister && <Register onClose={() => setShowRegister(false)} />}
       {showLogin && <Login onClose={() => setShowLogin(false)} />}
+      {showHowItWorks && (
+        <HowItWorks onClose={() => setShowHowItWorks(false)} />
+      )}
     </div>
   );
 }

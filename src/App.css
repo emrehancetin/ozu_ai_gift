@@ -625,3 +625,127 @@ body.theme-light .theme-toggle {
     display: none;
   }
 }
+
+/* Sayfanın en altındaki "Nasıl Çalışır?" butonu */
+.howItWorksButton {
+  position: fixed;
+  left: 50%;
+  bottom: 1.2rem;
+  transform: translateX(-50%);
+  z-index: 12;
+
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  padding: 0.55rem 1.1rem;
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+
+  background: rgba(15, 23, 42, 0.65);
+  color: #e5ecff;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  transition: 0.2s ease;
+}
+
+.howItWorksButton:hover {
+  transform: translateX(-50%) translateY(-2px);
+  border-color: rgba(200, 240, 255, 0.35);
+}
+
+/* Modal overlay */
+.howOverlay {
+  position: fixed;
+  inset: 0;
+  z-index: 80;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* Modal */
+.howModal {
+  width: min(520px, 100%);
+  background: rgba(15, 23, 42, 0.96);
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  border-radius: 22px;
+  padding: 1.2rem 1.2rem 1rem;
+  position: relative;
+  color: #e5e7eb;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.7);
+  max-height: calc(100vh - 2rem);
+  overflow: auto;
+}
+
+.howClose {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: none;
+  background: transparent;
+  color: #9ca3af;
+  cursor: pointer;
+  font-size: 1.1rem;
+  border-radius: 999px;
+  padding: 0.2rem 0.35rem;
+}
+
+.howTitle {
+  text-align: center;
+  font-size: 1.15rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.howSubtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  opacity: 0.85;
+  margin-bottom: 0.9rem;
+}
+
+.howSteps {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+.howTip {
+  margin-top: 0.9rem;
+  padding: 0.75rem 0.85rem;
+  border-radius: 14px;
+  background: rgba(200, 240, 255, 0.08);
+  border: 1px solid rgba(200, 240, 255, 0.18);
+  font-size: 0.85rem;
+  opacity: 0.95;
+}
+
+.howOk {
+  margin-top: 0.95rem;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  border-radius: 999px;
+  padding: 0.65rem 1rem;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #c55d8c, #447eb2);
+  box-shadow: 0 0 18px rgba(196, 96, 150, 0.25);
+}
+
+/* Mobilde alt buton taşmasın */
+@media (max-width: 520px) {
+  .howItWorksButton {
+    bottom: 0.9rem;
+    width: calc(100% - 2rem);
+    max-width: 420px;
+  }
+}
